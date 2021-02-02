@@ -47,6 +47,46 @@ export default class MovieInfo extends Component {
      
     }
     render() {
+        const {movieInfo} = this.state
+        let poster,
+            title,
+            name,
+            tagline,
+            overview,
+            genres,
+            companies,
+            release,
+            background,
+            runtime,
+            status,
+            homepage,
+            rating,
+            startSeries,
+            episodeRuntime
+
+            movieInfo.map((info) => (
+                title = info.title,
+                name = info.name,
+                tagline = info.tagline,
+                overview = info.overview,
+                runtime = info.runtime,
+                episodeRuntime = info.episodeRuntime,
+                status = info.status,
+                homepage = info.homepage,
+                rating = info.rating,
+                startSeries = info.startSeries,
+                genres = info.genres.map((genre) => (
+                genre.name
+               )).join(', '),
+               companies = info.companies.map((company) => (
+                company.name
+               )).join(', '),
+               release = info.release,
+               background = `https://image.tmdb.org/t/p/original${info.background}`,
+               poster = `https://image.tmdb.org/t/p/w500${info.poster}`
+            ))
+    
+     
         return (
             <div>
                 
