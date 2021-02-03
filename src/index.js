@@ -1,23 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import App from './App';
-import reducers from "./reducers/index"
+import React from "react";
+import ReactDOM from "react-dom";
+import createHistory from "history/createBrowserHistory";
+import thunk from "redux-thunk";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import { Router } from "react-router-dom";
+import reducers from "./reducers";
+import Routes from "./routes";
+import "./assets/css/app.scss";
 
-
-const intialState = {
-  movie: []
-}
-
-
-const store = createStore(reducers, intialState)
-
+const store = createStore(reducers, applyMiddleware(thunk));
+const history = createHistory();
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+  <Router history={history}>
+    <Provider store={store}>
+      <Routes store={store} />
+    </Provider>
+  </Router>,
+
+  document.getElementById("root")
 );
-
-
