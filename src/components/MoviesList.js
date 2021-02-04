@@ -1,45 +1,52 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import UpcomingMovies from './Upcoming';
 import TopratedMovies from './TopRated';
 import '../assets/css/moviesList.css';
 
 class MoviesList extends React.Component {
-  state = {
-    topRated: true,
-    active: true,
-    unactive: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      topRated: true, // eslint-disable-line 
+      active: true,
+      unactive: false, // eslint-disable-line 
+    };
+  }
 
   onClickTopRated = () => {
     this.setState({
-      topRated: true,
+      topRated: true, // eslint-disable-line 
       active: true,
-      unactive: false,
+      unactive: false, // eslint-disable-line 
     });
   };
 
   onClickUpcoming = () => {
     this.setState({
-      topRated: false,
+      topRated: false, // eslint-disable-line 
       active: false,
-      unactive: false,
+      unactive: false, // eslint-disable-line 
     });
   };
 
   render() {
-    const active = this.state.active ? 'active' : 'unactive';
-    const unactive = this.state.active ? 'unactive' : 'active';
+    const active = this.state.active ? 'active' : 'unactive'; // eslint-disable-line 
+    const unactive = this.state.active ? 'unactive' : 'active'; // eslint-disable-line 
+    const { topRated } = this.props;
     return (
       <>
         <div className="container text-center">
-          <button onClick={this.onClickTopRated} className={active}>
+          <button type="button" onClick={this.onClickTopRated} className={active}>
             Upcoming
           </button>
-          <button onClick={this.onClickUpcoming} className={unactive}>
+          <button type="button" onClick={this.onClickUpcoming} className={unactive}>
             Top Rated
           </button>
           <div className="movie-list mt-5">
-            {this.state.topRated ? <UpcomingMovies /> : <TopratedMovies />}
+            {topRated ? <UpcomingMovies /> : <TopratedMovies />}
+            {' '}
+
           </div>
         </div>
       </>

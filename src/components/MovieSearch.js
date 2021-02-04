@@ -1,24 +1,29 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchMovieSearch } from '../actions';
 import MovieRow from './MovieSearchRow';
 import '../assets/css/search.css';
+import popcorn from '../assets/img/popcorn.png';
 
 class movieSearch extends React.Component {
-  state = { movie_title: '' };
+  constructor() {
+    super();
+    this.state = { movieTitle: '' }; // eslint-disable-line
+  }
 
   searchChangeHandler = event => {
-    const movie_title = event.target.value;
-    this.props.fetchMovieSearch(movie_title);
+    const movieTitle = event.target.value;
+    this.props.fetchMovieSearch(movieTitle); // eslint-disable-line
     const movieRows = [];
-
-    this.props.movieSearch.map(movie => {
-      movie.poster_src = `https://image.tmdb.org/t/p/w185${movie.poster_path}`;
+    const { movieSearch } = this.props;
+    movieSearch.map(movie => {
+      movie.poster_src = `https://image.tmdb.org/t/p/w185${movie.poster_path}`; // eslint-disable-line
       const movieRow = <MovieRow key={movie.id} movie={movie} />;
       movieRows.push(movieRow);
       return movieRows;
     });
-    if (movie_title !== '') {
+    if (movieTitle !== '') {
       this.setState({ rows: movieRows });
     } else {
       this.setState({ rows: '' });
@@ -33,7 +38,7 @@ class movieSearch extends React.Component {
             <div style={{ display: 'flex', alignItems: 'baseline' }}>
               <img
                 style={{ height: 50, marginLeft: 10 }}
-                src={require('../assets/img/popcorn.png')}
+                src={popcorn}
                 alt="movie'n'chill"
               />
               <h3>
@@ -43,13 +48,13 @@ class movieSearch extends React.Component {
             </div>
 
             <input
-              value={this.movie_title}
+              value={this.movieTitle}
               onChange={this.searchChangeHandler}
               placeholder="Search for movie"
             />
           </div>
 
-          <div className="search-results">{this.state.rows}</div>
+          <div className="search-results">{this.state.rows}</div> {/* eslint-disable-line */}
         </div>
       </>
     );

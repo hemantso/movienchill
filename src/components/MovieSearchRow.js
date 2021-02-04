@@ -1,25 +1,29 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 class MovieRow extends React.Component {
-  viewMovie() {}
+  viewMovie() {} // eslint-disable-line 
 
   render() {
-    const movieId = this.props.movie.id;
+    const {
+      id, title, overview, poster_src  } = this.props.movie;   // eslint-disable-line 
 
     return (
-      <div key={this.props.movie.id}>
+      <div key={id}>
         <div className="container">
           <div className="col">
             <div className="movie-poster">
-              <img alt="poster" width="120" src={this.props.movie.poster_src} />
+              <img alt="poster" width="120" src={poster_src} /> {/* eslint-disable-line */}
+              {' '}
+
             </div>
 
             <div className="movie-details">
-              <h3>{this.props.movie.title}</h3>
-              <p>{this.props.movie.overview}</p>
+              <h3>{title}</h3>
+              <p>{overview}</p>
               <div>
-                <Link to={`/details/${movieId}`}>
+                <Link to={`/details/${id}`}>
                   <button
                     className="btn btn-about"
                     type="button"

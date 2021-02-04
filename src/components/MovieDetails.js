@@ -1,3 +1,4 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -10,17 +11,19 @@ import {
 import MovieTrailer from './MovieTrailer';
 import Footer from './Footer';
 import '../assets/css/details.css';
+import leftArrow from '../assets/img/left-arrow.svg';
 
 class MovieDetails extends React.Component {
   componentDidMount = async () => {
-    const movie_id = this.props.match.params.id;
-    this.props.fetchMovieDetails(movie_id);
-    this.props.fetchMovieCredits(movie_id);
-    this.props.fetchMovieTrailer(movie_id);
+    const movieId = this.props.match.params.id; // eslint-disable-line 
+    this.props.fetchMovieDetails(movieId); // eslint-disable-line 
+    this.props.fetchMovieCredits(movieId); // eslint-disable-line 
+    this.props.fetchMovieTrailer(movieId); // eslint-disable-line 
   };
 
   render() {
-    const details = this.props.movieDetails;
+    const details = this.props.movieDetails; // eslint-disable-line 
+    const credit = this.props.movieCredits; // eslint-disable-line 
     return (
       <>
         <div
@@ -31,9 +34,9 @@ class MovieDetails extends React.Component {
         >
           <div className="overlay" />
           <Link to="/">
-            <button>
+            <button type="button">
               <img
-                src={require('../assets/img/left-arrow.svg')}
+                src={leftArrow}
                 alt="previous button"
               />
             </button>
@@ -55,10 +58,10 @@ class MovieDetails extends React.Component {
                   {details.vote_average}
                 </p>
                 <em>
-                  "
+                  &quot;
                   {details.tagline}
                   {' '}
-                  "
+                  &quot;
                 </em>
               </div>
             </div>
@@ -69,10 +72,11 @@ class MovieDetails extends React.Component {
           <div className="actors">
             <h2>Actors</h2>
             <div className="row">
-              {this.props.movieCredits.map((actor, i) => {
+              {credit.map((actor, i) => {
                 if (i <= 9) {
                   return (
-                    <div className="col actor" key={`${actor},${i}`}>
+                    <div className="col actor" key={`${actor}`}>
+                      {' '}
                       <img
                         className="side-image"
                         src={`https://image.tmdb.org/t/p/w154/${actor.profile_path}`}
@@ -82,7 +86,7 @@ class MovieDetails extends React.Component {
                     </div>
                   );
                 }
-                return this.props.state;
+                return this.props.state; // eslint-disable-line 
               })}
             </div>
           </div>

@@ -1,17 +1,18 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import { fetchUpcomingMovies } from '../actions';
 
 import '../assets/css/moviesList.css';
 
 class UpcomingMovies extends React.Component {
   componentDidMount = async () => {
-    this.props.fetchUpcomingMovies();
+    this.props.fetchUpcomingMovies(); // eslint-disable-line 
   };
 
   render() {
+    const { upcoming } = this.props;
     return (
       <div className="container text-center">
         <h2> UPCOMING </h2>
@@ -21,7 +22,7 @@ class UpcomingMovies extends React.Component {
             justifyContent: 'center',
           }}
         >
-          {this.props.upcoming.map(movie => (
+          {upcoming.map(movie => (
             <div
               className="card"
               style={{
@@ -32,9 +33,7 @@ class UpcomingMovies extends React.Component {
               <div className="card-img-top">
                 <Link to={`/details/${movie.id}`}>
                   <img
-                    src={`https://image.tmdb.org/t/p/w154${
-                      movie.poster_path
-                    }`}
+                    src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
                     alt={movie.title}
                   />
                 </Link>
@@ -65,9 +64,6 @@ const mapStateToProps = state => ({
   upcoming: state.upcoming,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    fetchUpcomingMovies,
-  },
-)(UpcomingMovies);
+export default connect(mapStateToProps, {
+  fetchUpcomingMovies,
+})(UpcomingMovies);

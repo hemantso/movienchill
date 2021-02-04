@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from '../assets/img/moviedblogo.svg';
-import "../assets/css/footer.css"
+import '../assets/css/footer.css';
 
 const Footer = () => (
-  <div className="footer" >
+  <div className="footer">
     <p>
       Created by Hemant Soni. Powered by
       {' '}

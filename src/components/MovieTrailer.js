@@ -1,14 +1,16 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchMovieTrailer } from '../actions';
 import '../assets/css/trailer.css';
 
-class MovieTrailer extends React.Component {
+class MovieTrailer extends React.Component {  // eslint-disable-line 
   render() {
+    const { movieTrailer } = this.props;
     return (
       <div className="trailer">
-        {this.props.movieTrailer.map(trailer => (
+        {movieTrailer.map(trailer => (
           <iframe
             width="450"
             height="305"

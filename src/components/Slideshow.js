@@ -1,3 +1,4 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -7,15 +8,9 @@ import { fetchPopularMovies } from '../actions';
 import '../assets/css/slideshow.css';
 
 class Slideshow extends React.Component {
-  state = { isOpen: false };
-
   componentDidMount = async () => {
-    this.props.fetchPopularMovies();
+    this.props.fetchPopularMovies(); // eslint-disable-line 
   };
-
-  openModal() {
-    this.setState({ isOpen: true });
-  }
 
   render() {
     (() => {
@@ -23,7 +18,7 @@ class Slideshow extends React.Component {
       if (!sliderEl) {
         return;
       }
-      new Swiper(sliderEl, {
+      new Swiper(sliderEl, { // eslint-disable-line 
         init: true,
         loop: true,
         slidesPerView: 1,
@@ -39,24 +34,22 @@ class Slideshow extends React.Component {
         },
       });
     })();
-
+    const { slideshow } = this.props;
     return (
+
       <>
         <div className="carousel-container" data-wow-duration="3s">
           <div className="swiper-container">
             <div className="swiper-wrapper">
-              {this.props.slideshow.map(movie => (
+              {slideshow.map(movie => (
                 <div
                   key={movie.id}
                   className="swiper-slide"
                   style={{
-                    backgroundImage: `url(${`https://image.tmdb.org/t/p/original${
-                      movie.backdrop_path
-                    }`})`,
+                    backgroundImage: `url(${`https://image.tmdb.org/t/p/original${movie.backdrop_path}`})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
-
                   }}
                 >
                   <div className="description">
@@ -69,7 +62,7 @@ class Slideshow extends React.Component {
                     </p>
                     <div className="description-buttons">
                       <Link to={`/details/${movie.id}`}>
-                        <button className="btn btn-about">
+                        <button type="button" className="btn btn-about">
                           Read More
                           <i className="fas fa-info-circle" />
                         </button>
@@ -96,9 +89,6 @@ const mapStateToProps = state => ({
   slideshow: state.slideshow,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    fetchPopularMovies,
-  },
-)(Slideshow);
+export default connect(mapStateToProps, {
+  fetchPopularMovies,
+})(Slideshow);
