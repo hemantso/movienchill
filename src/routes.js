@@ -9,11 +9,11 @@ class Routes extends React.Component {
       <>
         <Switch>
           <Route
-            path={"/movienchill/details/:id"}
+            path={"/details/:id"}
             exact
             component={MovieDetails}
           />
-          <Route path={"/movienchill"} component={Home} />
+          <Route path={"/"} component={Home} />
         </Switch>
       </>
     );

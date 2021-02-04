@@ -30,7 +30,7 @@ class MovieDetails extends React.Component {
           }}
         >
           <div className="overlay" />
-          <Link to="/movienchill/">
+          <Link to="/">
             <button>
               <img
                 src={require("../assets/img/left-arrow.svg")}

@@ -19,7 +19,7 @@ class MovieRow extends React.Component {
               <h3>{this.props.movie.title}</h3>
               <p>{this.props.movie.overview}</p>
               <div>
-                <Link to={`/movienchill/details/${movieId}`}>
+                <Link to={`/details/${movieId}`}>
                   <button
                     className="btn btn-about"
                     type="button"

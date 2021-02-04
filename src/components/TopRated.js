@@ -30,7 +30,7 @@ class TopRatedMovies extends React.Component {
                   }}
                 >
                   <div className="card-img-top">
-                    <Link to={`/movienchill/details/${movie.id}`}>
+                    <Link to={`/details/${movie.id}`}>
                       <img
                         src={`https://image.tmdb.org/t/p/w154${
                           movie.poster_path
