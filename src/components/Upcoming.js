@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { fetchUpcomingMovies } from "../actions";
 
-import "../assets/css/moviesList.scss";
+import "../assets/css/moviesList.css";
 
 class UpcomingMovies extends React.Component {
   componentDidMount = async () => {

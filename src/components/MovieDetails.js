@@ -9,7 +9,7 @@ import {
 } from "../actions";
 import MovieTrailer from "./MovieTrailer";
 import Footer from "./Footer";
-import "../assets/css/details.scss";
+import "../assets/css/details.css";
 
 class MovieDetails extends React.Component {
   componentDidMount = async () => {

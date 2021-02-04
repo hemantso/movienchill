@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { fetchMovieTrailer } from "../actions";
-import "../assets/css/trailer.scss";
+import "../assets/css/trailer.css";
 class MovieTrailer extends React.Component {
   render() {
     return (

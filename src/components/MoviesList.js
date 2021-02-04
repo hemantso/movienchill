@@ -1,8 +1,8 @@
 import React from "react";
 import UpcomingMovies from "./Upcoming";
 import TopratedMovies from "./TopRated";
+import "../assets/css/moviesList.css";
 
-import "../assets/css/moviesList.scss";
 class MoviesList extends React.Component {
   state = {
     topRated: true,

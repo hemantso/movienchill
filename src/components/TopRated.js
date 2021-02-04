@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { fetchTopRatedMovies } from "../actions";
-import "../assets/css/moviesList.scss";
+import "../assets/css/moviesList.css";
 
 class TopRatedMovies extends React.Component {
   componentDidMount = async () => {

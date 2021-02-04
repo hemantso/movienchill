@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import Swiper from "swiper";
-import "../assets/css/slideshow.scss";
+import "../assets/css/slideshow.css";
 
 class Slideshow extends React.Component {
   state = { isOpen: false };

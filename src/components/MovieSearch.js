@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchMovieSearch } from "../actions";
 import MovieRow from "./MovieSearchRow";
+import "../assets/css/search.css";
 
 class movieSearch extends React.Component {
   state = { movie_title: "" };
@@ -15,6 +16,7 @@ class movieSearch extends React.Component {
       movie.poster_src = `https://image.tmdb.org/t/p/w185${movie.poster_path}`;
       const movieRow = <MovieRow key={movie.id} movie={movie} />;
       movieRows.push(movieRow);
+      return movieRows
     });
     if (movie_title !== "") {
       this.setState({ rows: movieRows });

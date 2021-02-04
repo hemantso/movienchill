@@ -1,20 +1,16 @@
 .search {
     padding: 10px;
-
-    .search-elements {
-        display: flex;
-        justify-content: space-between;
-        align-items: center
-    }
 }
-
-
+.search .search-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .col {
     display: flex;
     align-items: flex-end;
     margin-bottom: 20px;
 }
-
 .movie-details {
     margin-left: 20px;
     display: flex;
@@ -22,25 +18,21 @@
     align-items: flex-start;
     text-align: justify;
 }
-
 input {
-    background-color: rgb(58, 41, 68);
+    background-color: #3a2944;
     border: none;
     color: #fff;
     border-radius: 10px;
     width: 400px;
     height: 40px;
 }
-
 input:focus {
-    outline: none !important
+    outline: none !important;
 }
-
 ::placeholder {
     color: #fff;
-    padding: 20px
+    padding: 20px;
 }
-
 .btn-about {
     border: 1px solid white;
     background: transparent;
@@ -48,18 +40,15 @@ input:focus {
     border-radius: 10px;
     color: white;
 }
-
 .fas {
-    font-size: .9rem;
+    font-size: 0.9rem;
     margin-left: 10px;
 }
-
 @media only screen and (max-width: 600px) {
     .search-elements {
         display: block !important;
-    }
-
+   }
     input {
         width: 100%;
-    }
+   }
 }
