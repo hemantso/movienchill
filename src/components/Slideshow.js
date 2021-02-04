@@ -47,9 +47,13 @@ class Slideshow extends React.Component {
                   key={movie.id}
                   className="swiper-slide"
                   style={{
-                    background: `url(${`https://image.tmdb.org/t/p/original${
+                    backgroundImage: `url(${`https://image.tmdb.org/t/p/original${
                       movie.backdrop_path
-                    }`}) center center no-repeat / cover`
+                    }`})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                    
                   }}
                 >
                   <div className="description">

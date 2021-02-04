@@ -30,7 +30,7 @@ class movieSearch extends React.Component {
         <div className="search">
           <div className="search-elements">
             <div style={{ display: "flex", alignItems: "baseline" }}>
-              <h3>Cool<span>Movies</span></h3>
+              <h3>MovieNchill</h3>
             </div>
 
             <input

@@ -19,8 +19,6 @@
   text-transform: uppercase;
 }
 .swiper-slide {
-  align-items: center;
-  background-size: cover, cover !important;
   display: flex;
   flex-direction: column;
   font-size: 18px;

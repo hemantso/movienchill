@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import {
   fetchMovieDetails,
   fetchMovieCredits,
-  fetchMovieTrailer
+  fetchMovieTrailer,
 } from "../actions";
 import MovieTrailer from "./MovieTrailer";
 import Footer from "./Footer";
@@ -26,9 +26,7 @@ class MovieDetails extends React.Component {
         <div
           className="jumbotron"
           style={{
-            background: `url(${`https://image.tmdb.org/t/p/original/${
-              details.backdrop_path
-            }`}) center top no-repeat / cover`
+            background: `url(${`https://image.tmdb.org/t/p/original/${details.backdrop_path}`}) center top no-repeat / cover`,
           }}
         >
           <div className="overlay" />
@@ -68,9 +66,7 @@ class MovieDetails extends React.Component {
                     <div className="col actor" key={`${actor},${i}`}>
                       <img
                         className="side-image"
-                        src={`https://image.tmdb.org/t/p/w154/${
-                          actor.profile_path
-                        }`}
+                        src={`https://image.tmdb.org/t/p/w154/${actor.profile_path}`}
                         alt={details.original_title}
                       />
                       <p>{actor.name}</p>
@@ -92,14 +88,15 @@ class MovieDetails extends React.Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     movieDetails: state.movieDetails,
     movieCredits: state.movieCredits,
-    movieTrailer: state.movieTrailer
+    movieTrailer: state.movieTrailer,
   };
 };
-export default connect(
-  mapStateToProps,
-  { fetchMovieDetails, fetchMovieCredits, fetchMovieTrailer }
-)(MovieDetails);
+export default connect(mapStateToProps, {
+  fetchMovieDetails,
+  fetchMovieCredits,
+  fetchMovieTrailer,
+})(MovieDetails);
