@@ -1,4 +1,4 @@
-import movieApi from "../apis/movieapi";
+import movieApi from '../apis/movieapi';
 import {
   FETCH_POPULAR_MOVIES,
   FETCH_TOP_RATED_MOVIES,
@@ -7,11 +7,11 @@ import {
   FETCH_MOVIE_CREDITS,
   FETCH_MOVIE_TRAILER,
   FETCH_MOVIE_SEARCH,
-} from "../constant";
+} from '../constant';
 
-export const fetchPopularMovies = () => async (dispatch) => {
+export const fetchPopularMovies = () => async dispatch => {
   const response = await movieApi.get(
-    `/movie/popular?api_key=9b2a89530a87ba66ebd0b27ef292906c`
+    '/movie/popular?api_key=9b2a89530a87ba66ebd0b27ef292906c',
   );
   dispatch({
     type: FETCH_POPULAR_MOVIES,
@@ -19,9 +19,9 @@ export const fetchPopularMovies = () => async (dispatch) => {
   });
 };
 
-export const fetchUpcomingMovies = () => async (dispatch) => {
+export const fetchUpcomingMovies = () => async dispatch => {
   const response = await movieApi.get(
-    `/movie/upcoming?api_key=9b2a89530a87ba66ebd0b27ef292906c`
+    '/movie/upcoming?api_key=9b2a89530a87ba66ebd0b27ef292906c',
   );
   dispatch({
     type: FETCH_UPCOMING_MOVIES,
@@ -29,9 +29,9 @@ export const fetchUpcomingMovies = () => async (dispatch) => {
   });
 };
 
-export const fetchTopRatedMovies = () => async (dispatch) => {
+export const fetchTopRatedMovies = () => async dispatch => {
   const response = await movieApi.get(
-    "/movie/top_rated?api_key=9b2a89530a87ba66ebd0b27ef292906c"
+    '/movie/top_rated?api_key=9b2a89530a87ba66ebd0b27ef292906c',
   );
   dispatch({
     type: FETCH_TOP_RATED_MOVIES,
@@ -39,9 +39,9 @@ export const fetchTopRatedMovies = () => async (dispatch) => {
   });
 };
 
-export const fetchMovieDetails = (movie_id) => async (dispatch) => {
+export const fetchMovieDetails = movieId => async dispatch => {
   const response = await movieApi.get(
-    `/movie/${movie_id}?api_key=9b2a89530a87ba66ebd0b27ef292906c`
+    `/movie/${movieId}?api_key=9b2a89530a87ba66ebd0b27ef292906c`,
   );
   dispatch({
     type: FETCH_MOVIE_DETAILS,
@@ -49,9 +49,9 @@ export const fetchMovieDetails = (movie_id) => async (dispatch) => {
   });
 };
 
-export const fetchMovieCredits = (movie_id) => async (dispatch) => {
+export const fetchMovieCredits = movieId => async dispatch => {
   const response = await movieApi.get(
-    `/movie/${movie_id}/credits?api_key=9b2a89530a87ba66ebd0b27ef292906c`
+    `/movie/${movieId}/credits?api_key=9b2a89530a87ba66ebd0b27ef292906c`,
   );
   dispatch({
     type: FETCH_MOVIE_CREDITS,
@@ -59,9 +59,9 @@ export const fetchMovieCredits = (movie_id) => async (dispatch) => {
   });
 };
 
-export const fetchMovieTrailer = (movie_id) => async (dispatch) => {
+export const fetchMovieTrailer = movieId => async dispatch => {
   const response = await movieApi.get(
-    `/movie/${movie_id}/videos?api_key=9b2a89530a87ba66ebd0b27ef292906c`
+    `/movie/${movieId}/videos?api_key=9b2a89530a87ba66ebd0b27ef292906c`,
   );
   dispatch({
     type: FETCH_MOVIE_TRAILER,
@@ -69,9 +69,9 @@ export const fetchMovieTrailer = (movie_id) => async (dispatch) => {
   });
 };
 
-export const fetchMovieSearch = (movie_title) => async (dispatch) => {
+export const fetchMovieSearch = movieTitle => async dispatch => {
   const response = await movieApi.get(
-    `/search/movie?api_key=9b2a89530a87ba66ebd0b27ef292906c&query=${movie_title}`
+    `/search/movie?api_key=9b2a89530a87ba66ebd0b27ef292906c&query=${movieTitle}`,
   );
   dispatch({
     type: FETCH_MOVIE_SEARCH,

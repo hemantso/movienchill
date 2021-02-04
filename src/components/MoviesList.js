@@ -1,20 +1,20 @@
-import React from "react";
-import UpcomingMovies from "./Upcoming";
-import TopratedMovies from "./TopRated";
-import "../assets/css/moviesList.css";
+import React from 'react';
+import UpcomingMovies from './Upcoming';
+import TopratedMovies from './TopRated';
+import '../assets/css/moviesList.css';
 
 class MoviesList extends React.Component {
   state = {
     topRated: true,
     active: true,
-    unactive: false
+    unactive: false,
   };
 
   onClickTopRated = () => {
     this.setState({
       topRated: true,
       active: true,
-      unactive: false
+      unactive: false,
     });
   };
 
@@ -22,13 +22,13 @@ class MoviesList extends React.Component {
     this.setState({
       topRated: false,
       active: false,
-      unactive: false
+      unactive: false,
     });
   };
 
   render() {
-    let active = this.state.active ? "active" : "unactive";
-    let unactive = this.state.active ? "unactive" : "active";
+    const active = this.state.active ? 'active' : 'unactive';
+    const unactive = this.state.active ? 'unactive' : 'active';
     return (
       <>
         <div className="container text-center">

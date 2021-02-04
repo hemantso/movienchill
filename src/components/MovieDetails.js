@@ -1,15 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import {
   fetchMovieDetails,
   fetchMovieCredits,
   fetchMovieTrailer,
-} from "../actions";
-import MovieTrailer from "./MovieTrailer";
-import Footer from "./Footer";
-import "../assets/css/details.css";
+} from '../actions';
+import MovieTrailer from './MovieTrailer';
+import Footer from './Footer';
+import '../assets/css/details.css';
 
 class MovieDetails extends React.Component {
   componentDidMount = async () => {
@@ -33,7 +33,7 @@ class MovieDetails extends React.Component {
           <Link to="/">
             <button>
               <img
-                src={require("../assets/img/left-arrow.svg")}
+                src={require('../assets/img/left-arrow.svg')}
                 alt="previous button"
               />
             </button>
@@ -49,8 +49,17 @@ class MovieDetails extends React.Component {
               <div className="movie-description-text">
                 <span>{details.release_date}</span>
                 <h1>{details.original_title}</h1>
-                <p> ☆ {details.vote_average} </p>
-                <em>" {details.tagline} "</em>
+                <p>
+                  {' '}
+                  ☆
+                  {details.vote_average}
+                </p>
+                <em>
+                  "
+                  {details.tagline}
+                  {' '}
+                  "
+                </em>
               </div>
             </div>
           </div>
@@ -72,9 +81,8 @@ class MovieDetails extends React.Component {
                       <p>{actor.name}</p>
                     </div>
                   );
-                } else {
-                  return this.props.state;
                 }
+                return this.props.state;
               })}
             </div>
           </div>
@@ -88,13 +96,11 @@ class MovieDetails extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    movieDetails: state.movieDetails,
-    movieCredits: state.movieCredits,
-    movieTrailer: state.movieTrailer,
-  };
-};
+const mapStateToProps = state => ({
+  movieDetails: state.movieDetails,
+  movieCredits: state.movieCredits,
+  movieTrailer: state.movieTrailer,
+});
 export default connect(mapStateToProps, {
   fetchMovieDetails,
   fetchMovieCredits,

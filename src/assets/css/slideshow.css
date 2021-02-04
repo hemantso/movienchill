@@ -6,11 +6,13 @@
   width: 100%;
   height: 80vh;
 }
+
 .swiper-container {
   height: 90vh;
   width: 100%;
   position: relative;
 }
+
 .swiper-container__title title {
   font-size: 1.2rem;
   font-weight: bold;
@@ -18,6 +20,7 @@
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
+
 .swiper-slide {
   display: flex;
   flex-direction: column;
@@ -30,36 +33,45 @@
   z-index: 3;
   color: aliceblue;
 }
+
 .description {
   margin-left: 50px;
   margin-bottom: 100px;
   width: 30%;
   z-index: 5;
 }
+
 .description .btn {
   border-radius: 10px;
   color: white;
 }
+
 .description .btn-about {
   border: 1px solid white;
   background: transparent;
   margin-left: 10px;
 }
+
 .description .fas {
   font-size: 0.9rem;
   margin-left: 10px;
 }
-a, a:active, a:visited a:hover {
+
+a,
+a:active,
+a:visited a:hover {
   color: initial;
   text-decoration: none;
 }
+
 @media only screen and (max-width: 600px) {
   .description {
     width: 100%;
     margin-bottom: 120px;
- }
+  }
+
   .description p {
     width: 80vw;
     font-size: 1rem;
- }
+  }
 }

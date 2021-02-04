@@ -1,4 +1,4 @@
-import { FETCH_MOVIE_SEARCH } from "../constant";
+import { FETCH_MOVIE_SEARCH } from '../constant';
 
 export default (state = [], action) => {
   switch (action.type) {

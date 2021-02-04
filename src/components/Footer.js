@@ -1,20 +1,19 @@
-import React from "react";
+import React from 'react';
+import logo from '../assets/img/moviedblogo.svg';
+import "../assets/css/footer.css"
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <div style={{ textAlign: "center", marginTop: 20 }}>
-        <p>
-          Created by Hemant Soni. Powered by{" "}
-          <img
-            style={{ height: 50 }}
-            src={require("../assets/img/moviedblogo.svg")}
-            alt="moviedblogo"
-          />
-        </p>
-      </div>
-    );
-  }
-}
+const Footer = () => (
+  <div className="footer" >
+    <p>
+      Created by Hemant Soni. Powered by
+      {' '}
+      <img
+        style={{ height: 50 }}
+        src={logo}
+        alt="moviedblogo"
+      />
+    </p>
+  </div>
+);
 
 export default Footer;

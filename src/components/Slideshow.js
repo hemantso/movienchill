@@ -1,22 +1,25 @@
-import React from "react";
-import { fetchPopularMovies } from "../actions";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import Swiper from "swiper";
-import "../assets/css/slideshow.css";
+import Swiper from 'swiper';
+import { fetchPopularMovies } from '../actions';
+import '../assets/css/slideshow.css';
 
 class Slideshow extends React.Component {
   state = { isOpen: false };
+
   componentDidMount = async () => {
     this.props.fetchPopularMovies();
   };
+
   openModal() {
     this.setState({ isOpen: true });
   }
+
   render() {
     (() => {
-      const sliderEl = document.querySelectorAll(".swiper-container");
+      const sliderEl = document.querySelectorAll('.swiper-container');
       if (!sliderEl) {
         return;
       }
@@ -27,13 +30,13 @@ class Slideshow extends React.Component {
         observer: true,
 
         pagination: {
-          el: ".swiper-pagination",
-          clickable: true
+          el: '.swiper-pagination',
+          clickable: true,
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       });
     })();
 
@@ -52,15 +55,17 @@ class Slideshow extends React.Component {
                     }`})`,
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
-                    
+                    backgroundRepeat: 'no-repeat',
+
                   }}
                 >
                   <div className="description">
                     <h3 className="swiper-slide__title">{movie.title}</h3>
                     <p>{movie.overview}</p>
                     <p className="swiper-slide-rating">
-                      Rating: ☆ {movie.vote_average}
+                      Rating: ☆
+                      {' '}
+                      {movie.vote_average}
                     </p>
                     <div className="description-buttons">
                       <Link to={`/details/${movie.id}`}>
@@ -87,15 +92,13 @@ class Slideshow extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    slideshow: state.slideshow
-  };
-};
+const mapStateToProps = state => ({
+  slideshow: state.slideshow,
+});
 
 export default connect(
   mapStateToProps,
   {
-    fetchPopularMovies
-  }
+    fetchPopularMovies,
+  },
 )(Slideshow);
