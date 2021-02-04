@@ -30,7 +30,12 @@ class movieSearch extends React.Component {
         <div className="search">
           <div className="search-elements">
             <div style={{ display: "flex", alignItems: "baseline" }}>
-              <h3>MovieNchill</h3>
+            <img
+                style={{ height: 50, marginLeft: 10 }}
+                src={require("../assets/img/popcorn.png")}
+                alt="movie'n'chill"
+              />
+              <h3>MovieN<span>chill</span></h3>
             </div>
 
             <input
