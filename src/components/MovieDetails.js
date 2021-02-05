@@ -22,14 +22,13 @@ class MovieDetails extends React.Component {
   };
 
   render() {
-    const details = this.props.movieDetails; // eslint-disable-line 
-    const credit = this.props.movieCredits; // eslint-disable-line 
+    const {movieDetails, movieCredits } = this.props; 
     return (
       <>
         <div
           className="jumbotron"
           style={{
-            background: `url(${`https://image.tmdb.org/t/p/original/${details.backdrop_path}`}) center top no-repeat / cover`,
+            background: `url(${`https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path}`}) center top no-repeat / cover`,
           }}
         >
           <div className="overlay" />
@@ -46,20 +45,20 @@ class MovieDetails extends React.Component {
             <div className="description-details">
               <img
                 className="side-image"
-                src={`https://image.tmdb.org/t/p/w154/${details.poster_path}`}
-                alt={details.original_title}
+                src={`https://image.tmdb.org/t/p/w154/${movieDetails.poster_path}`}
+                alt={movieDetails.original_title}
               />
               <div className="movie-description-text">
-                <span>{details.release_date}</span>
-                <h1>{details.original_title}</h1>
+                <span>{movieDetails.release_date}</span>
+                <h1>{movieDetails.original_title}</h1>
                 <p>
                   {' '}
                   ☆
-                  {details.vote_average}
+                  {movieDetails.vote_average}
                 </p>
                 <em>
                   &quot;
-                  {details.tagline}
+                  {movieDetails.tagline}
                   {' '}
                   &quot;
                 </em>
@@ -68,11 +67,11 @@ class MovieDetails extends React.Component {
           </div>
         </div>
         <div className="container">
-          <h3>{details.overview}</h3>
+          <h3>{movieDetails.overview}</h3>
           <div className="actors">
             <h2>Actors</h2>
             <div className="row">
-              {credit.map((actor, i) => {
+              {movieCredits.map((actor, i) => {
                 if (i <= 9) {
                   return (
                     <div className="col actor" key={`${actor}`}>
@@ -80,7 +79,7 @@ class MovieDetails extends React.Component {
                       <img
                         className="side-image"
                         src={`https://image.tmdb.org/t/p/w154/${actor.profile_path}`}
-                        alt={details.original_title}
+                        alt={movieDetails.original_title}
                       />
                       <p>{actor.name}</p>
                     </div>

@@ -6,7 +6,7 @@ import MovieDetails from './components/MovieDetails';
 const Routes = () => (
   <>
     <Switch>
-      <Route path="/details/:id" exact component={MovieDetails} />
+      <Route path="/details/:id" component={MovieDetails} />
       <Route path="/" component={Home} />
     </Switch>
   </>

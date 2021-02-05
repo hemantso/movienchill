@@ -4,12 +4,15 @@ import { connect } from 'react-redux';
 import { fetchMovieSearch } from '../actions';
 import MovieRow from './MovieSearchRow';
 import '../assets/css/search.css';
+
 import popcorn from '../assets/img/popcorn.png';
 
 class movieSearch extends React.Component {
   constructor() {
     super();
-    this.state = { movieTitle: '' }; // eslint-disable-line
+    this.state = { 
+      movieTitle: '' 
+    } // eslint-disable-line
   }
 
   searchChangeHandler = event => {
@@ -64,6 +67,8 @@ class movieSearch extends React.Component {
 const mapStateToProps = state => ({
   movieSearch: state.movieSearch,
 });
+
+
 
 export default connect(
   mapStateToProps,
