@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchMovieSearch } from '../actions';
-import MovieRow from './MovieSearchRow';
+import MovieRow from '../components/MovieSearchRow';
 import '../assets/css/search.css';
 import PropTypes from 'prop-types';
 import popcorn from '../assets/img/popcorn.png';

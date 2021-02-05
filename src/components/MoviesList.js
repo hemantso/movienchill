@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0 */
 import React, { useState } from "react";
-import UpcomingMovies from "./Upcoming";
-import TopratedMovies from "./TopRated";
+import UpcomingMovies from "../containers/Upcoming";
+import TopratedMovies from "../containers/TopRated";
 import "../assets/css/moviesList.css";
 
 const MoviesList = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import Slideshow from './Slideshow';
+import Slideshow from '../containers/Slideshow';
 import MoviesList from './MoviesList';
-import MovieSearch from './MovieSearch';
+import MovieSearch from '../containers/MovieSearch';
 import Footer from './Footer';
 
 const Home = () => (
