@@ -1,18 +1,16 @@
 /* eslint react/prop-types: 0 */
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchUpcomingMovies } from '../actions';
 
 import '../assets/css/moviesList.css';
 
-class UpcomingMovies extends React.Component {
-  componentDidMount = async () => {
-    this.props.fetchUpcomingMovies(); // eslint-disable-line 
-  };
-
-  render() {
-    const { upcoming } = this.props;
+const UpcomingMovies = ({ upcoming, fetchUpcomingMovies}) => {
+  useEffect( () => {
+    fetchUpcomingMovies()
+  })
+  
     return (
       <div className="container text-center">
         <h2> UPCOMING </h2>
@@ -58,7 +56,7 @@ class UpcomingMovies extends React.Component {
       </div>
     );
   }
-}
+
 
 const mapStateToProps = state => ({
   upcoming: state.upcoming,

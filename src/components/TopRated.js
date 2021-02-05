@@ -1,18 +1,16 @@
 /* eslint react/prop-types: 0 */
-import React from 'react';
+import React, { useEffect} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { fetchTopRatedMovies } from '../actions';
 import '../assets/css/moviesList.css';
 
-class TopRatedMovies extends React.Component {
-  componentDidMount = async () => {
-    this.props.fetchTopRatedMovies(); // eslint-disable-line 
-  };
-
-  render() {
-    const { toprated } = this.props;
+const TopRatedMovies = ({ toprated, fetchTopRatedMovies }) => {
+  useEffect(() => {
+    fetchTopRatedMovies()
+  })
+    
     return (
       <div className="container text-center">
         <h2>TOP RATED</h2>
@@ -62,7 +60,6 @@ class TopRatedMovies extends React.Component {
       </div>
     );
   }
-}
 
 const mapStateToProps = state => ({
   toprated: state.toprated,
