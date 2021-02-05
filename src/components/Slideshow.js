@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 import Swiper from 'swiper';
 import { fetchPopularMovies } from '../actions';
 import '../assets/css/slideshow.css';
@@ -89,6 +89,13 @@ const mapStateToProps = state => ({
   slideshow: state.slideshow,
 });
 
+Slideshow.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  backdrop_path: PropTypes.string.isRequired,
+  vote_average: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+}
 export default connect(mapStateToProps, {
   fetchPopularMovies,
 })(Slideshow);

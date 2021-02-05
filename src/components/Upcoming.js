@@ -55,6 +55,7 @@ const mapStateToProps = (state) => ({
 UpcomingMovies.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  poster_path: PropTypes.string.isRequired,
   vote_average: PropTypes.string.isRequired,
   release_date: PropTypes.string.isRequired,
 }
