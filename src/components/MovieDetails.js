@@ -11,6 +11,7 @@ import {
 import MovieTrailer from './MovieTrailer';
 import Footer from './Footer';
 import '../assets/css/details.css';
+import PropTypes from 'prop-types';
 import leftArrow from '../assets/img/left-arrow.svg';
 
 class MovieDetails extends React.Component {
@@ -104,6 +105,22 @@ const mapStateToProps = state => ({
   movieCredits: state.movieCredits,
   movieTrailer: state.movieTrailer,
 });
+
+MovieDetails.propTypes = {
+  movieDetails: PropTypes.objectOf(PropTypes.shape({
+    backdrop_path: PropTypes.string.isRequired,
+    original_title: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    vote_average: PropTypes.string.isRequired,
+    tagline: PropTypes.string.isRequired,
+  })),
+  movieCredits: PropTypes.objectOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    original_title: PropTypes.string.isRequired,
+    profile_path: PropTypes.string.isRequired,
+  }))
+}
 export default connect(mapStateToProps, {
   fetchMovieDetails,
   fetchMovieCredits,
