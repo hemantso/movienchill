@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchMovieSearch } from '../actions';
 import MovieRow from './MovieSearchRow';
 import '../assets/css/search.css';
-
+import PropTypes from 'prop-types';
 import popcorn from '../assets/img/popcorn.png';
 
 class movieSearch extends React.Component {
@@ -68,7 +68,10 @@ const mapStateToProps = state => ({
   movieSearch: state.movieSearch,
 });
 
-
+movieSearch.propTypes = {
+  id: PropTypes.string.isRequired,
+  poster_path: PropTypes.string.isRequired,  
+}
 
 export default connect(
   mapStateToProps,
