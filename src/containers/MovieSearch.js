@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';

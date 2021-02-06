@@ -1,4 +1,3 @@
-/* eslint react/prop-types: 0 */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -15,10 +14,10 @@ import leftArrow from '../assets/img/left-arrow.svg';
 
 const MovieDetails = props => {
   useEffect(() => {
-    const movieId = props.match.params.id; // eslint-disable-line 
-    props.fetchMovieDetails(movieId); // eslint-disable-line 
-    props.fetchMovieCredits(movieId); // eslint-disable-line 
-    props.fetchMovieTrailer(movieId); // eslint-disable-line 
+    const { id } = props.match.params;
+    props.fetchMovieDetails(id);
+    props.fetchMovieCredits(id);
+    props.fetchMovieTrailer(id);
   });
 
   const { movieDetails, movieCredits } = props;
@@ -74,7 +73,7 @@ const MovieDetails = props => {
             {movieCredits.map((actor, i) => {
               if (i <= 9) {
                 return (
-                  <div className="col actor" key={`${actor},${Math.random() * 9999999}`}>
+                  <div className="col actor" key={`${actor},${i}`}> {/*eslint-disable-line*/}
                     {' '}
                     <img
                       className="side-image"
@@ -106,6 +105,11 @@ const mapStateToProps = state => ({
 });
 
 MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }),
   fetchMovieDetails: PropTypes.func.isRequired,
   fetchMovieCredits: PropTypes.func.isRequired,
   fetchMovieTrailer: PropTypes.func.isRequired,
@@ -117,18 +121,18 @@ MovieDetails.propTypes = {
       vote_average: PropTypes.number.isRequired,
       release_date: PropTypes.string.isRequired,
       poster_path: PropTypes.string.isRequired,
-      adult: PropTypes.bool.isRequired,
+      adult: PropTypes.bool,
     }),
   ),
   movieCredits: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      profile_path: PropTypes.string.isRequired,
     }),
   ),
 
 };
 MovieDetails.defaultProps = {
+  match: {},
   movieDetails: {},
   movieCredits: [],
 };
