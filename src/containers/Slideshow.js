@@ -1,8 +1,7 @@
-/* eslint react/prop-types: 0 */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Swiper from 'swiper';
 import { fetchPopularMovies } from '../actions';
 import '../assets/css/slideshow.css';
@@ -89,13 +88,21 @@ const mapStateToProps = state => ({
   slideshow: state.slideshow,
 });
 
-// Slideshow.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   backdrop_path: PropTypes.string.isRequired,
-//   vote_average: PropTypes.string.isRequired,
-//   overview: PropTypes.string.isRequired,
-// };
+Slideshow.propTypes = {
+  fetchPopularMovies: PropTypes.func.isRequired,
+  slideshow: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      backdrop_path: PropTypes.string.isRequired,
+      vote_average: PropTypes.number.isRequired,
+      overview: PropTypes.string.isRequired,
+    }),
+  ),
+};
+Slideshow.defaultProps = {
+  slideshow: [],
+};
 export default connect(mapStateToProps, {
   fetchPopularMovies,
 })(Slideshow);
