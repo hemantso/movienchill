@@ -1,8 +1,7 @@
-/* eslint react/prop-types: 0 */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { fetchTopRatedMovies } from '../actions';
 import '../assets/css/moviesList.css';
 
@@ -64,13 +63,21 @@ const mapStateToProps = state => ({
   toprated: state.toprated,
 });
 
-// TopRatedMovies.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   poster_path: PropTypes.string.isRequired,
-//   vote_average: PropTypes.string.isRequired,
-//   release_date: PropTypes.string.isRequired,
-// };
+TopRatedMovies.propTypes = {
+  fetchTopRatedMovies: PropTypes.func.isRequired,
+  toprated: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      poster_path: PropTypes.string.isRequired,
+      vote_average: PropTypes.number.isRequired,
+      release_date: PropTypes.string.isRequired,
+    }),
+  ),
+};
+TopRatedMovies.defaultProps = {
+  toprated: [],
+};
 export default connect(mapStateToProps, {
   fetchTopRatedMovies,
 })(TopRatedMovies);
