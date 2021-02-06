@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0 */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { fetchMovieSearch } from '../actions';
 import MovieRow from '../components/MovieSearchRow';
 import '../assets/css/search.css';
@@ -67,13 +67,16 @@ const mapStateToProps = state => ({
   movieSearch: state.movieSearch,
 });
 
-// movieSearch.propTypes = {
-//   movieSearch: PropTypes.shape({
-//     id: PropTypes.string.isRequired,
-//     poster_path: PropTypes.string.isRequired,
-//   }),
-// };
-
+movieSearch.propTypes = {
+  movieSearch: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }),
+  ),
+};
+movieSearch.defaultProps = {
+  movieSearch: [],
+};
 export default connect(mapStateToProps, {
   fetchMovieSearch,
 })(movieSearch);
