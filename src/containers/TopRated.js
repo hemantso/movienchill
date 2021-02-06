@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { fetchTopRatedMovies } from '../actions';
 import '../assets/css/moviesList.css';
 
-const TopRatedMovies = ({ toprated, fetchTopRatedMovies }) => {
+const TopRatedMovies = (props) => {
   useEffect(() => {
     fetchTopRatedMovies();
   });
-
+  const { toprated } = props;
   return (
     <div className="container text-center">
       <h2>TOP RATED</h2>
