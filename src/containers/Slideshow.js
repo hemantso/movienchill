@@ -1,5 +1,5 @@
 /* eslint react/prop-types: 0 */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
@@ -8,31 +8,33 @@ import { fetchPopularMovies } from '../actions';
 import '../assets/css/slideshow.css';
 
 const Slideshow = props => {
+  const [mySwiper, setMySwiper] = useState(null);
   useEffect(() => {
     props.fetchPopularMovies();
   });
-
-  (() => {
+  let mySwipe;
+  useEffect(() => {
     const sliderEl = document.querySelectorAll('.swiper-container');
-    if (!sliderEl) {
-      return;
-    }
-    new Swiper(sliderEl, { // eslint-disable-line      
-      init: true,
-      loop: true,
-      slidesPerView: 1,
-      observer: true,
+    if (mySwiper === null) {
+      mySwipe = new Swiper(sliderEl, {
+        init: true,
+        loop: true,
+        slidesPerView: 1,
+        observer: true,
 
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  })();
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    }
+    setMySwiper(mySwipe);
+  }, []);
+
   const { slideshow } = props;
 
   return (
