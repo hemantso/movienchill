@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { fetchUpcomingMovies } from '../actions';
 import '../assets/css/moviesList.css';
 
@@ -61,13 +61,21 @@ const mapStateToProps = state => ({
   upcoming: state.upcoming,
 });
 
-// UpcomingMovies.propTypes = {
-//   id: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   poster_path: PropTypes.string.isRequired,
-//   vote_average: PropTypes.string.isRequired,
-//   release_date: PropTypes.string.isRequired,
-// };
+UpcomingMovies.propTypes = {
+  fetchUpcomingMovies: PropTypes.func.isRequired,
+  upcoming: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      poster_path: PropTypes.string.isRequired,
+      vote_average: PropTypes.number.isRequired,
+      release_date: PropTypes.string.isRequired,
+    }),
+  ),
+};
+UpcomingMovies.defaultProps = {
+  upcoming: [],
+};
 export default connect(mapStateToProps, {
   fetchUpcomingMovies,
 })(UpcomingMovies);
