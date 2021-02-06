@@ -1,8 +1,8 @@
 /* eslint react/prop-types: 0 */
-import React, { useState } from "react";
-import UpcomingMovies from "../containers/Upcoming";
-import TopratedMovies from "../containers/TopRated";
-import "../assets/css/moviesList.css";
+import React, { useState } from 'react';
+import UpcomingMovies from '../containers/Upcoming';
+import TopratedMovies from '../containers/TopRated';
+import '../assets/css/moviesList.css';
 
 const MoviesList = () => {
   const [state, setState] = useState({
@@ -27,8 +27,8 @@ const MoviesList = () => {
     });
   };
 
-  const active = state.active ? "active" : "unactive";
-  const unactive = state.active ? "unactive" : "active";
+  const active = state.active ? 'active' : 'unactive';
+  const unactive = state.active ? 'unactive' : 'active';
   return (
     <>
       <div className="container text-center">
@@ -39,7 +39,8 @@ const MoviesList = () => {
           Top Rated
         </button>
         <div className="movie-list mt-5">
-          {state.topRated ? <UpcomingMovies /> : <TopratedMovies />}{" "}
+          {state.topRated ? <UpcomingMovies /> : <TopratedMovies />}
+          {' '}
         </div>
       </div>
     </>

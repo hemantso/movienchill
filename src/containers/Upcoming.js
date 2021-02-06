@@ -1,10 +1,10 @@
 /* eslint react/prop-types: 0 */
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { fetchUpcomingMovies } from "../actions";
-import PropTypes from 'prop-types';
-import "../assets/css/moviesList.css";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
+import { fetchUpcomingMovies } from '../actions';
+import '../assets/css/moviesList.css';
 
 const UpcomingMovies = ({ upcoming, fetchUpcomingMovies }) => {
   useEffect(() => {
@@ -17,14 +17,14 @@ const UpcomingMovies = ({ upcoming, fetchUpcomingMovies }) => {
       <div
         className="row"
         style={{
-          justifyContent: "center",
+          justifyContent: 'center',
         }}
       >
-        {upcoming.map((movie) => (
+        {upcoming.map(movie => (
           <div
             className="card"
             style={{
-              width: "10rem",
+              width: '10rem',
             }}
             key={movie.id}
           >
@@ -35,10 +35,19 @@ const UpcomingMovies = ({ upcoming, fetchUpcomingMovies }) => {
                   alt={movie.title}
                 />
               </Link>
-              <span> ☆{movie.vote_average}</span>
+              <span>
+                {' '}
+                ☆
+                {movie.vote_average}
+              </span>
             </div>
             <div className="card-title">
-              <p> {movie.release_date}</p> <h6>{movie.title}</h6>
+              <p>
+                {' '}
+                {movie.release_date}
+              </p>
+              {' '}
+              <h6>{movie.title}</h6>
             </div>
           </div>
         ))}
@@ -48,17 +57,17 @@ const UpcomingMovies = ({ upcoming, fetchUpcomingMovies }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   upcoming: state.upcoming,
 });
 
-UpcomingMovies.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  poster_path: PropTypes.string.isRequired,
-  vote_average: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
-}
+// UpcomingMovies.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   title: PropTypes.string.isRequired,
+//   poster_path: PropTypes.string.isRequired,
+//   vote_average: PropTypes.string.isRequired,
+//   release_date: PropTypes.string.isRequired,
+// };
 export default connect(mapStateToProps, {
   fetchUpcomingMovies,
 })(UpcomingMovies);

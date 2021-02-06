@@ -1,10 +1,10 @@
 /* eslint react/prop-types: 0 */
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
-import { fetchTopRatedMovies } from "../actions";
-import "../assets/css/moviesList.css";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
+import { fetchTopRatedMovies } from '../actions';
+import '../assets/css/moviesList.css';
 
 const TopRatedMovies = ({ toprated, fetchTopRatedMovies }) => {
   useEffect(() => {
@@ -17,15 +17,15 @@ const TopRatedMovies = ({ toprated, fetchTopRatedMovies }) => {
       <div
         className="row"
         style={{
-          justifyContent: "center",
+          justifyContent: 'center',
         }}
       >
-        {toprated.map((movie) => (
+        {toprated.map(movie => (
           <div key={movie.id}>
             <div
               className="card"
               style={{
-                width: "10rem",
+                width: '10rem',
               }}
             >
               <div className="card-img-top">
@@ -36,10 +36,19 @@ const TopRatedMovies = ({ toprated, fetchTopRatedMovies }) => {
                   />
                 </Link>
 
-                <span> ☆{movie.vote_average}</span>
+                <span>
+                  {' '}
+                  ☆
+                  {movie.vote_average}
+                </span>
               </div>
               <div className="card-title">
-                <p> {movie.release_date}</p> <h6>{movie.title}</h6>
+                <p>
+                  {' '}
+                  {movie.release_date}
+                </p>
+                {' '}
+                <h6>{movie.title}</h6>
               </div>
             </div>
           </div>
@@ -50,17 +59,17 @@ const TopRatedMovies = ({ toprated, fetchTopRatedMovies }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   toprated: state.toprated,
 });
 
-TopRatedMovies.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  poster_path: PropTypes.string.isRequired,
-  vote_average: PropTypes.string.isRequired,
-  release_date: PropTypes.string.isRequired,
-}
+// TopRatedMovies.propTypes = {
+//   id: PropTypes.string.isRequired,
+//   title: PropTypes.string.isRequired,
+//   poster_path: PropTypes.string.isRequired,
+//   vote_average: PropTypes.string.isRequired,
+//   release_date: PropTypes.string.isRequired,
+// };
 export default connect(mapStateToProps, {
   fetchTopRatedMovies,
 })(TopRatedMovies);
