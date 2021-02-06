@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { fetchUpcomingMovies } from '../actions';
 import '../assets/css/moviesList.css';
 
-const UpcomingMovies = ({ upcoming, fetchUpcomingMovies }) => {
+const UpcomingMovies = props => {
   useEffect(() => {
-    fetchUpcomingMovies();
+    props.fetchUpcomingMovies();
   });
-
+  const { upcoming } = props;
   return (
     <div className="container text-center">
       <h2> UPCOMING </h2>

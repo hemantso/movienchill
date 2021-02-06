@@ -22,6 +22,7 @@ const MovieDetails = props => {
   });
 
   const { movieDetails, movieCredits } = props;
+
   return (
     <>
       <div

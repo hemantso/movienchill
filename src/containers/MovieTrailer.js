@@ -7,6 +7,7 @@ import '../assets/css/trailer.css';
 
 const MovieTrailer = (props) => {  // eslint-disable-line 
   const { movieTrailer } = props;
+
   return (
     <div className="trailer">
       {movieTrailer.map(trailer => (

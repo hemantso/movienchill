@@ -9,7 +9,7 @@ import '../assets/css/slideshow.css';
 
 const Slideshow = props => {
   useEffect(() => {
-    fetchPopularMovies();
+    props.fetchPopularMovies();
   });
 
   (() => {
@@ -34,6 +34,7 @@ const Slideshow = props => {
     });
   })();
   const { slideshow } = props;
+
   return (
     <>
       <div className="carousel-container" data-wow-duration="3s">
