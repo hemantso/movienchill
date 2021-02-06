@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   fetchMovieDetails,
   fetchMovieCredits,
@@ -74,7 +74,7 @@ const MovieDetails = props => {
             {movieCredits.map((actor, i) => {
               if (i <= 9) {
                 return (
-                  <div className="col actor" key={`${actor}`}>
+                  <div className="col actor" key={`${actor},${Math.random() * 9999999}`}>
                     {' '}
                     <img
                       className="side-image"
@@ -105,6 +105,33 @@ const mapStateToProps = state => ({
   movieTrailer: state.movieTrailer,
 });
 
+MovieDetails.propTypes = {
+  fetchMovieDetails: PropTypes.func.isRequired,
+  fetchMovieCredits: PropTypes.func.isRequired,
+  fetchMovieTrailer: PropTypes.func.isRequired,
+  movieDetails: PropTypes.objectOf(
+    PropTypes.shape({
+      tagline: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      backdrop_path: PropTypes.string.isRequired,
+      vote_average: PropTypes.number.isRequired,
+      release_date: PropTypes.string.isRequired,
+      poster_path: PropTypes.string.isRequired,
+      adult: PropTypes.bool.isRequired,
+    }),
+  ),
+  movieCredits: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      profile_path: PropTypes.string.isRequired,
+    }),
+  ),
+
+};
+MovieDetails.defaultProps = {
+  movieDetails: {},
+  movieCredits: [],
+};
 // MovieDetails.propTypes = {
 //   movieDetails: PropTypes.shape({
 //     backdrop_path: PropTypes.string.isRequired,
