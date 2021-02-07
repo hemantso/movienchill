@@ -84,7 +84,7 @@ const MovieDetails = props => {
                   </div>
                 );
               }
-                return props.state; // eslint-disable-line 
+              return props.state; {/*eslint-disable-line*/}
             })}
           </div>
         </div>
@@ -136,21 +136,7 @@ MovieDetails.defaultProps = {
   movieDetails: {},
   movieCredits: [],
 };
-// MovieDetails.propTypes = {
-//   movieDetails: PropTypes.shape({
-//     backdrop_path: PropTypes.string.isRequired,
-//     original_title: PropTypes.string.isRequired,
-//     poster_path: PropTypes.string.isRequired,
-//     release_date: PropTypes.string.isRequired,
-//     vote_average: PropTypes.string.isRequired,
-//     tagline: PropTypes.string.isRequired,
-//   }),
-//   movieCredits: PropTypes.shape({
-//     name: PropTypes.string.isRequired,
-//     original_title: PropTypes.string.isRequired,
-//     profile_path: PropTypes.string.isRequired,
-//   }),
-// };
+
 export default connect(mapStateToProps, {
   fetchMovieDetails,
   fetchMovieCredits,

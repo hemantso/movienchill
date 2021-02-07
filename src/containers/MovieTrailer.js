@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { fetchMovieTrailer } from '../actions';
 import '../assets/css/trailer.css';
 
-const MovieTrailer = (props) => {  // eslint-disable-line 
+const MovieTrailer = props => {
   const { movieTrailer } = props;
 
   return (

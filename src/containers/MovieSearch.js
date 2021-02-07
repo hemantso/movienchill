@@ -15,7 +15,7 @@ const movieSearch = props => {
     event.preventDefault();
     setTitle(event.target.value);
     const movieTitle = event.target.value;
-    props.fetchMovieSearch(movieTitle); // eslint-disable-line
+    props.fetchMovieSearch(movieTitle);
     const movieRows = [];
     const { movieSearch } = props;
     movieSearch.map(movie => {
@@ -56,7 +56,6 @@ const movieSearch = props => {
         </div>
         <div className="search-results">{state.rows}</div>
         {' '}
-        {/* eslint-disable-line */}
       </div>
     </>
   );
@@ -67,6 +66,7 @@ const mapStateToProps = state => ({
 });
 
 movieSearch.propTypes = {
+  fetchMovieSearch: PropTypes.func.isRequired,
   movieSearch: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
