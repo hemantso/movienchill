@@ -1,70 +1,178 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![License: MIT][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/hemant-soni-vst-au4/movienchill">
+    <img src="./src/assets/img/popcorn.png" alt="Logo" width="80" height="80">
+  </a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <h3 align="center">MovieNchill</h3>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  <p align="center">
+    MovieNchill browsing wep app created with React/Redux and TMDB API.
+    <br />
+    <a href="https://github.com/hemant-soni-vst-au4/movienchill"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://movienchill.herokuapp.com/">View Demo</a>
+    ·
+    <a href="https://github.com/hemant-soni-vst-au4/movienchill/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/hemant-soni-vst-au4/movienchill/issues">Request Feature</a>
+  </p>
+</p>
 
-### `yarn test`
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-### `yarn build`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This is a Single Page Application (SPA) built with React and Redux to browse and search movies. The design of the web app resembles Netflix. The data is fetched from [TMDB API](themoviedb.org).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](./src/assets/img/home.png)
+![image](./src/assets/img/search.png)
+![image](./src/assets/img/details.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Routes:
 
-### `yarn eject`
+* `/` - home page.
+* `/details/:id` - movie details page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Features:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Search movie
+* View movie details
+* movie trailer
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Built With
 
-## Learn More
+- React
+- Redux
+- ESLint
+- Stylelint
+- SASS
+- Styled components
+- npm
+- TMDB API
+- Prop-types
+- [Heroku](https://movienchill.herokuapp.com/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Live demo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Deployed to Heroku - [live demo](https://movienchill.herokuapp.com/).
 
-### Code Splitting
+<!-- GETTING STARTED -->
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To get a local copy up and running follow these simple steps.
 
-### Analyzing the Bundle Size
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* npm
 
-### Making a Progressive Web App
+    ```sh
+    npm install npm@latest -g
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Installation
 
-### Advanced Configuration
+1. Clone the repo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```sh
+    git clone https://github.com/hemant-soni-vst-au4/movienchill.git
+    ```
 
-### Deployment
+2. Change directory
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    ```sh
+    cd movienchill
+    ```
 
-### `yarn build` fails to minify
+3. Install NPM packages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    ```sh
+    npm install
+    ```
+
+4. Start the local server
+
+    ```sh
+    npm start
+    ```
+
+<!-- ROADMAP -->
+## Roadmap
+
+Check the [issues](https://github.com/hemant-soni-vst-au4/movienchill/issues).
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- CONTACT -->
+## Contact
+
+👤 **Hemant soni**
+
+- Github: [@githubhandle](https://github.com/hemant-soni-vst-au4)
+- Twitter: [@twitterhandle](https://twitter.com/abdelperez11)
+- Linkedin: [linkedin](https://www.linkedin.com/in/hemant-soni-97427b193/)
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* Design inspirations
+  * [Netflix-Redesign-challenge-on-Uplabs](https://dribbble.com/shots/5093535-Netflix-Redesign-challenge-on-Uplabs)
+  * [Netflix-Redesign-Idea](https://dribbble.com/shots/5253521-Netflix-Redesign-Idea)
+* README Icon from Icons8
+* [Img Shields](https://shields.io)
+* [Font Awesome](https://fontawesome.com)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/hemant-soni-vst-au4/movienchill.svg?style=flat-square
+[contributors-url]: https://github.com/hemant-soni-vst-au4/movienchill/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/hemant-soni-vst-au4/movienchill.svg?style=flat-square
+[forks-url]: https://github.com/hemant-soni-vst-au4/movienchill/network/members
+[stars-shield]: https://img.shields.io/github/stars/hemant-soni-vst-au4/movienchill.svg?style=flat-square
+[stars-url]: https://github.com/hemant-soni-vst-au4/movienchill/stargazers
+[issues-shield]: https://img.shields.io/github/issues/hemant-soni-vst-au4/movienchill.svg?style=flat-square
+[issues-url]: https://github.com/hemant-soni-vst-au4/movienchill/issues
+[license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: https://github.com/hemant-soni-vst-au4/movienchill/blob/development/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/hemant-soni-97427b193/
