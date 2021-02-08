@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render the page correctly Footer content in place 1`] = `"Created by Hemant Soni. Powered by "`;
+
+exports[`Render the page correctly Render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="footer"
+  >
+    <p>
+      Created by Hemant Soni. Powered by 
+      <img
+        alt="moviedblogo"
+        src="moviedblogo.svg"
+        style="height: 50px;"
+      />
+    </p>
+  </div>
+</DocumentFragment>
+`;
