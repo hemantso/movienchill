@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render the page correctly Application name in place 1`] = `"MovieNchill"`;
+
+exports[`Render the page correctly Footer content in place 1`] = `"Created by Hemant Soni. Powered by "`;
+
+exports[`Render the page correctly Render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="search"
+  >
+    <div
+      class="search-elements"
+    >
+      <div
+        style="display: flex; align-items: baseline;"
+      >
+        <img
+          alt="movie'n'chill"
+          src="popcorn.png"
+          style="height: 50px; margin-left: 10px;"
+        />
+        <h3>
+          MovieN
+          <span>
+            chill
+          </span>
+        </h3>
+      </div>
+      <input
+        name="search"
+        placeholder="Search for movie"
+        value=""
+      />
+    </div>
+    <div
+      class="search-results"
+    />
+     
+  </div>
+  <div
+    class="carousel-container"
+    data-wow-duration="3s"
+  >
+    <div
+      class="swiper-container swiper-container-initialized swiper-container-horizontal"
+    >
+      <div
+        class="swiper-wrapper"
+        style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+      />
+      <div
+        aria-label="Previous slide"
+        class="swiper-button-prev"
+        role="button"
+        tabindex="0"
+      />
+      <div
+        aria-label="Next slide"
+        class="swiper-button-next"
+        role="button"
+        tabindex="0"
+      />
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        class="swiper-notification"
+      />
+    </div>
+    <hr
+      class="carousel-container__separator"
+    />
+  </div>
+  <div
+    class="container text-center"
+  >
+    <button
+      class="active"
+      type="button"
+    >
+      Upcoming
+    </button>
+    <button
+      class="unactive"
+      type="button"
+    >
+      Top Rated
+    </button>
+    <div
+      class="movie-list mt-5"
+    >
+      <div
+        class="container text-center"
+      >
+        <h2>
+           UPCOMING 
+        </h2>
+        <div
+          class="row"
+          style="justify-content: center;"
+        />
+        <hr
+          class="cards-separator"
+        />
+      </div>
+       
+    </div>
+  </div>
+  <div
+    class="footer"
+  >
+    <p>
+      Created by Hemant Soni. Powered by 
+      <img
+        alt="moviedblogo"
+        src="moviedblogo.svg"
+        style="height: 50px;"
+      />
+    </p>
+  </div>
+</DocumentFragment>
+`;
