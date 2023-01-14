@@ -77,11 +77,11 @@ This is a Single Page Application (SPA) built with React and Redux to browse and
 - npm
 - TMDB API
 - Prop-types
-- [Heroku](https://movienchill.herokuapp.com/)
+- [Netlify](https://movienchill.netlify.app/)
 
 ## Live demo
 
-Deployed to Heroku - [live demo](https://movienchill.herokuapp.com/).
+Deployed to Netlify - [live demo](https://movienchill.netlify.app/).
 
 <!-- GETTING STARTED -->
 ## Getting Started
