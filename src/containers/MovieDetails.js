@@ -1,7 +1,9 @@
+/* eslint-disable */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import {
   fetchMovieDetails,
   fetchMovieCredits,
@@ -13,12 +15,15 @@ import '../assets/css/details.css';
 import leftArrow from '../assets/img/left-arrow.svg';
 
 const MovieDetails = props => {
+  const { id } = useParams()
+  
   useEffect(() => {
-    const { id } = props.match.params;
+    
     props.fetchMovieDetails(id);
     props.fetchMovieCredits(id);
     props.fetchMovieTrailer(id);
-  });
+  }, []);
+  
 
   const { movieDetails, movieCredits } = props;
 
