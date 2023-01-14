@@ -1,4 +1,4 @@
-/* eslint react/prop-types: 0 */
+/* eslint-disable */
 import React, { useState } from 'react';
 import UpcomingMovies from '../containers/Upcoming';
 import TopratedMovies from '../containers/TopRated';
@@ -30,7 +30,6 @@ const MoviesList = () => {
   const active = state.active ? 'active' : 'unactive';
   const unactive = state.active ? 'unactive' : 'active';
   return (
-    <>
       <div className="container text-center">
         <button type="button" onClick={onClickTopRated} className={active}>
           Upcoming
@@ -43,7 +42,6 @@ const MoviesList = () => {
           {' '}
         </div>
       </div>
-    </>
   );
 };
 

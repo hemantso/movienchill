@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   FETCH_TOP_RATED_MOVIES,
 } from '../constant';

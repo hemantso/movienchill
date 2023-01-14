@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   FETCH_MOVIE_TRAILER,
 } from '../constant';

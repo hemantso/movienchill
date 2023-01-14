@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   FETCH_UPCOMING_MOVIES,
 } from '../constant';

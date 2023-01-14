@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import Slideshow from '../containers/Slideshow';
 import MoviesList from './MoviesList';

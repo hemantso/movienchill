@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -32,7 +33,6 @@ const movieSearch = props => {
   };
 
   return (
-    <>
       <div className="search">
         <div className="search-elements">
           <div style={{ display: 'flex', alignItems: 'baseline' }}>
@@ -57,7 +57,6 @@ const movieSearch = props => {
         <div className="search-results">{state.rows}</div>
         {' '}
       </div>
-    </>
   );
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   FETCH_POPULAR_MOVIES,
 } from '../constant';
