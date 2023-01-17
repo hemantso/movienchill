@@ -148,9 +148,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 👤 **Hemant soni**
 
-- Github: [@githubhandle](https://github.com/hemant-soni-vst-au4)
-- Twitter: [@twitterhandle](https://twitter.com/abdelperez11)
-- Linkedin: [linkedin](https://www.linkedin.com/in/hemant-soni-97427b193/)
+- Github: [@githubhandle](https://github.com/hemantso)
+- Linkedin: [linkedin](https://www.linkedin.com/in/hemantso/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
@@ -165,14 +164,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/hemant-soni-vst-au4/movienchill.svg?style=flat-square
-[contributors-url]: https://github.com/hemant-soni-vst-au4/movienchill/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/hemant-soni-vst-au4/movienchill.svg?style=flat-square
-[forks-url]: https://github.com/hemant-soni-vst-au4/movienchill/network/members
-[stars-shield]: https://img.shields.io/github/stars/hemant-soni-vst-au4/movienchill.svg?style=flat-square
-[stars-url]: https://github.com/hemant-soni-vst-au4/movienchill/stargazers
-[issues-shield]: https://img.shields.io/github/issues/hemant-soni-vst-au4/movienchill.svg?style=flat-square
-[issues-url]: https://github.com/hemant-soni-vst-au4/movienchill/issues
+[contributors-url]: https://github.com/hemantso/movienchill/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/hemantso/movienchill.svg?style=flat-square
+[forks-url]: https://github.com/hemantso/movienchill/network/members
+[stars-shield]: https://img.shields.io/github/stars/hemantso/movienchill.svg?style=flat-square
+[stars-url]: https://github.com/hemantso/movienchill/stargazers
+[issues-shield]: https://img.shields.io/github/issues/hemantso4/movienchill.svg?style=flat-square
+[issues-url]: https://github.com/hemantso/movienchill/issues
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: https://github.com/hemant-soni-vst-au4/movienchill/blob/development/LICENSE
+[license-url]: https://github.com/hemantso/movienchill/blob/development/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/hemant-soni-97427b193/
+[linkedin-url]: https://www.linkedin.com/in/hemantso/
